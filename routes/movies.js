@@ -5,8 +5,8 @@ const prisma = new PrismaClient()
 let take=10;
 let skip=0;
 router.get('/', async function(req, res, next) {
-    take=parseInt(req.query.take,10);
-    skip=parseInt(req.query.skip,10);
+    if(req.query.take)take=parseInt(req.query.take,10);
+    if(req.query.skip)skip=parseInt(req.query.skip,10);
     const movies = await prisma.movies.findMany({
         skip: skip,
         take: take,
@@ -16,9 +16,9 @@ router.get('/', async function(req, res, next) {
     res.send({
         data: movies,
         pagination : {
-            count : 1, // Total des enregistrements
-            take: 1,   // Nombre d'éléments sélectionnés
-            skip: 0   // Décalage à partir duquel on prend les  données
+            count : 10, // Total des enregistrements
+            take: take,   // Nombre d'éléments sélectionnés
+            skip: skip   // Décalage à partir duquel on prend les  données
         }
     });
 })
