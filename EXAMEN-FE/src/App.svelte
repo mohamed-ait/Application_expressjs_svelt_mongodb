@@ -10,7 +10,7 @@
 	var sp=1;
 	var ep=10;	
 
-
+  //getting data from expressjs project
 	async function getMovies(skip){
 		fetch("http://localhost:8000/movies?take=10&skip="+skip)
 		.then((res) => res.json())
@@ -21,24 +21,28 @@
 		})
 		
 	}
+	//function to get the id and calling the paginate function
 	function page(event){
 		var k =event.target.id;
 		paginate(k);
 	}
+	//this function call the function getMovies when the component become mounted
 	onMount(async function() {
 		getMovies(1);
 		paginate(1);
 	});
+	//function to get the previous page
 	function precedente(){
 		console.log(cp);
 		if(cp-1<1)paginate(1)
 		else paginate(cp-1)
 	}
+	//function to get the next page
 	function suivante(){
 		if(cp+1>100)paginate(1)
 		else paginate(cp+1)
 	}
-
+  //the paginate function
 	function paginate(skip){
 		var l=(skip-1)*take;
 		console.log(l)
@@ -48,6 +52,7 @@
 		ep=(sp+10)>100 ? 100 : sp+10;
 		update(sp,ep);
 	}
+	//function  to update the page bar
 	function update(sp,ep){
 		const el=document.getElementById("cont");
 		el.innerHTML="<button>Previous</button>";
@@ -62,12 +67,7 @@ el.innerHTML += "<button id="+i+" > "+i+"</button>";
 		el.children[0].addEventListener("click", precedente);
 		el.children[12].addEventListener("click",suivante);
 	
-	
-
 	}
-function hello(event){
-	alert("ok");
-}
 
 </script>
 
