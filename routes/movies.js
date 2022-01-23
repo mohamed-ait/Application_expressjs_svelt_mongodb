@@ -6,7 +6,7 @@ let take=10;
 let skip=0;
 router.get('/', async function(req, res, next) {
     if(req.query.take)take=parseInt(req.query.take,10);
-    if(req.query.skip)skip=parseInt(req.query.skip,10);
+    if(req.query.skip>= 0)skip=parseInt(req.query.skip,10);
     const movies = await prisma.movies.findMany({
         skip: skip,
         take: take,
