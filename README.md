@@ -1,4 +1,4 @@
 # Application_expressjs_svelt_mongodb
 
-![f1](https://user-images.githubusercontent.com/80115513/150660802-0bd5f0fb-8573-404e-a8e8-6f043b3060bb.jpg)
-![f2](https://user-images.githubusercontent.com/80115513/150660804-f3d05674-2922-4cad-abfc-09dfcdf6288d.jpg)
+![f1](https://user-images.githubusercontent.com/80115513/150661204-d1a80741-341a-4e29-b85e-189da7f7dad2.jpg)
+![f2](https://user-images.githubusercontent.com/80115513/150661206-3f6cda29-08e1-4ebd-bd5d-350aae0df728.jpg).jpg)
